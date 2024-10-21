@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Pedro</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .titulo {
+            margin: 10px 0;
+            text-align: center;
+            font-size: 28px;
+        }
+        .textoanimacao {
+            z-index: 2;
+            position: relative;
+            padding: 10px;
+            background-color: rgba(0, 128, 0, 0.5);
+            display: inline-block;
+            border-radius: 10px;
+            margin: 20px auto;
+            color: black;
+            font-style: italic;
+            font-size: 20px;
+            animation: animartexto 2s infinite;
+            text-align: center;
+            margin-left: 630px;
+            margin-top: -1200px;
+        }
+        @keyframes animartexto {
+            0%, 100% { top: 0px; }
+            50% { top: 10px; }
+        }
+        .textoprolado {
+            font-size: 20px;
+            text-align: center;
+            margin: 20px 0;
+            font-style: oblique;
+            animation: prolado 5s forwards;
+        }
+        .habilidades { color: green; }
+        .vermelho { color: red; }
+        
+        @keyframes prolado {
+            from { left: 0px; }
+            to { left: -500px; }
+        }
+
+        .projetos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 10px;
+        }
+        .projeto {
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            width: 90%;
+            position: relative;
+            animation: aparecer 2s ease-in-out;
+        }
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .primeiro { background-color: grey; }
+        .jogoprojeto { background-color: cyan; }
+        .quiz { background-color: blue; color: white; }
+        .pets { background-color: pink; }
+        .academiasitee { background-color: red; }
+
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            animation: fadeIn 3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo"></h1>
+    <img src="1_Ox1w7Ao2ZAT0Szn2Mzxfog.jpg" alt="Imagem do Portfólio">
+    <h1 class="textoanimacao">Experiências e projetos:</h1>
+    <h1 class="textoprolado">
+        Nesse site você verá <br>minhas<br> 
+        <span class="habilidades">habilidades</span><br>
+        e <span class="vermelho">projetos</span>!
+    </h1>
+
+    <div class="projetos">
+        <div class="projeto primeiro">HTML + CSS + JS <br>🖥️</div>
+        <a href="cenário.html" class="projeto jogoprojeto">
+            Cópia do jogo Omori<br>(clique para acessar)<br>🎮
+        </a>
+        <a href="y.html" class="projeto quiz">
+            Quiz interativo<br>(clique para acessar)<br>❓
+        </a>
+        <a href="saturation.html" class="projeto pets">
+            Clique no animal e na comida<br>(clique para acessar)<br>🐶
+        </a>
+        <a href="academiasite.html" class="projeto academiasitee">
+            Site de academia<br>(clique para acessar)<br>🏋️‍♂️
+        </a>
+    </div>
+
+    <script>
+        var palavra = "Bem vindo ao portfólio de Pedro!";
+        var index = 0;
+        var texto = document.querySelector(".titulo");
+
+        function getword() {
+            texto.innerHTML += palavra.charAt(index);
+            index++;
+            if (index < palavra.length) {
+                setTimeout(getword, 100);
+            }
+        }
+        getword();
+    </script>
+</body>
+</html>
